@@ -9,13 +9,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # chezmoi keeps oh-my-zsh updated, so its self-updater is off
 zstyle ':omz:update' mode disabled
 
-# nvm: auto-switch Node version when entering a folder with .nvmrc
-zstyle ':omz:plugins:nvm' autoload yes
-
 # zsh-syntax-highlighting must stay last
-plugins=(git nvm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# Vite+ (vp) manages Node + package managers. Also loaded in .zshenv; re-sourced
+# here so its bin wins on PATH and its completions load (needs compinit from omz).
+[[ -f ~/.config/vite-plus/env ]] && . ~/.config/vite-plus/env
 
 # Machine-specific stuff (secrets, work aliases) that should NOT be synced
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

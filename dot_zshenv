@@ -1,0 +1,3 @@
+# Runs for every zsh, including non-interactive ones (scripts, IDE tasks).
+export PATH="$HOME/.local/bin:$PATH"
+[[ -f ~/.config/vite-plus/env ]] && . ~/.config/vite-plus/env
