@@ -1,0 +1,21 @@
+# Powerlevel10k instant prompt. Keep near the top; anything needing console input goes above it.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# chezmoi keeps oh-my-zsh updated, so its self-updater is off
+zstyle ':omz:update' mode disabled
+
+# zsh-syntax-highlighting must stay last
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# Machine-specific stuff (secrets, work aliases) that should NOT be synced
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# To customize the prompt, run `p10k configure`, then `chezmoi add ~/.p10k.zsh`
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
