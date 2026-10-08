@@ -9,8 +9,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # chezmoi keeps oh-my-zsh updated, so its self-updater is off
 zstyle ':omz:update' mode disabled
 
+# nvm: auto-switch Node version when entering a folder with .nvmrc
+zstyle ':omz:plugins:nvm' autoload yes
+
 # zsh-syntax-highlighting must stay last
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git nvm zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
