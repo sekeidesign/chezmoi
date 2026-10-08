@@ -1,0 +1,9 @@
+[user]
+	name = Pg Gonni
+	email = 59372630+sekeidesign@users.noreply.github.com
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
